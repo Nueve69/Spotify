@@ -16,10 +16,10 @@ class Artist
     private ?int $id = null;
 
     #[ORM\Column(length: 255)]
-    private ?string $Name = null;
+    private ?string $lastName = null;
 
     #[ORM\Column(length: 255)]
-    private ?string $FirstName = null;
+    private ?string $firstName = null;
 
     #[ORM\ManyToMany(targetEntity: Music::class, inversedBy: 'artists')]
     private Collection $musics;
@@ -34,26 +34,26 @@ class Artist
         return $this->id;
     }
 
-    public function getName(): ?string
+    public function getLastName(): ?string
     {
-        return $this->Name;
+        return $this->lastName;
     }
 
-    public function setName(string $Name): static
+    public function setLastName(string $lastName): static
     {
-        $this->Name = $Name;
+        $this->lastName = $lastName;
 
         return $this;
     }
 
     public function getFirstName(): ?string
     {
-        return $this->FirstName;
+        return $this->firstName;
     }
 
-    public function setFirstName(string $FirstName): static
+    public function setFirstName(string $firstName): static
     {
-        $this->FirstName = $FirstName;
+        $this->firstName = $firstName;
 
         return $this;
     }
